@@ -1,0 +1,18 @@
+{
+  "service": "app",
+  "dockerComposeFile": "../docker-compose.yml",
+  "workspaceFolder": "/app",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.tabSize": 2
+      }
+    }
+  }
+}

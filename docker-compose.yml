@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    tty: true
+    image: lambda-selenium-sample
+    container_name: app
+    environment:
+      TZ: "Asia/Tokyo"
