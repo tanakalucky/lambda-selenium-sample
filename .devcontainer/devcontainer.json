@@ -7,7 +7,7 @@
   ],
   "customizations": {
     "vscode": {
-      "extensions": ["eamodio.gitlens", "biomejs.biome"],
+      "extensions": ["eamodio.gitlens", "biomejs.biome", "HashiCorp.terraform"],
       "settings": {
         "editor.tabSize": 2,
         "editor.defaultFormatter": "biomejs.biome",
@@ -15,6 +15,16 @@
         "editor.codeActionsOnSave": {
           "quickfix.biome": "explicit",
           "source.organizeImports.biome": "explicit"
+        },
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
+        "[terraform-vars]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
         }
       }
     }

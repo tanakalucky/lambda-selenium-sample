@@ -1,7 +1,9 @@
 FROM node:20-slim
 
+ARG TERRAFORM_VERSION=1.9.2
+
 RUN apt-get update && \
-    apt-get install -y git vim \
+    apt-get install -y git vim unzip python3 \
     ca-certificates \
     curl \
     gnupg \
@@ -13,3 +15,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     npm update -g npm
+
+RUN curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
+    rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
