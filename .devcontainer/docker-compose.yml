@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - ../:/app
     tty: true
     image: lambda-selenium-sample
     container_name: app
