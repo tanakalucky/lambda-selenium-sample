@@ -1,7 +1,8 @@
+import { Handler } from 'aws-lambda';
 import { Builder } from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome';
 
-export const handler = async () => {
+export const handler: Handler = async (event, context) => {
     const options = new chrome.Options();
     options.addArguments('--headless=new');
     options.addArguments('--no-sandbox');
@@ -28,7 +29,11 @@ export const handler = async () => {
         await driver.get("https://www.google.com/")
     
         const title = await driver.getTitle();
-        console.log(`Page title is: ${title}`);
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify(`Page title is: ${title}`),
+        }
     } catch (error) {
         console.error('An error occurred:', error);
     } finally {
