@@ -3,7 +3,7 @@ module "selenium_sample" {
 
   function_name = "lambda-selenium-sample"
   timeout       = 60
-  memory_size   = 512
+  memory_size   = 2048
 
   create_package = false
 
