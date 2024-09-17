@@ -7,7 +7,7 @@ services:
       - ../:/app
     tty: true
     image: lambda-selenium-sample
-    container_name: app
+    container_name: lambda-selenium-sample
     environment:
       TZ: "Asia/Tokyo"
     network_mode: "host"
