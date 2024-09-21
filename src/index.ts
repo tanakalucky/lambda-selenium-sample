@@ -14,7 +14,9 @@ export const handler: Handler = async (event, context) => {
   options.addArguments('--remote-debugging-pipe');
   options.addArguments('--window-size=1920,1080');
 
-  options.setBinaryPath('/opt/chrome/chrome-linux64/chrome');
+  options.setBinaryPath(
+    '/opt/chrome/chrome-headless-shell-linux64/chrome-headless-shell',
+  );
 
   const serviceBuilder = new chrome.ServiceBuilder(
     '/opt/chrome-driver/chromedriver-linux64/chromedriver',
